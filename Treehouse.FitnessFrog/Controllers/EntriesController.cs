@@ -47,7 +47,7 @@ namespace Treehouse.FitnessFrog.Controllers
 
         //Use this action method when "Posting from a form" the 2 decorator attributes specify the origin and the form method which is to be associated with
         [HttpPost]
-        public ActionResult Add(string date, string activityId, string duration, string intensity, string exclude, string notes)
+        public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes)
         {
             //Je kan op onderstaande manier form data ophalen of via parameters in de function signature als hierboven
             //string date = Request.Form["Date"];
