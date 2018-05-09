@@ -41,6 +41,15 @@ namespace Treehouse.FitnessFrog.Controllers
 
         public ActionResult Add()
         {
+           
+            return View();
+        }
+
+        //Use this action method when "Posting from a form" the 2 decorator attributes specify the origin and the form method which is to be associated with
+        [ActionName("Add"), HttpPost]
+        public ActionResult AddPost()
+        {
+
             return View();
         }
 
