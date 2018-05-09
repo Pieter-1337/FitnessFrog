@@ -49,22 +49,7 @@ namespace Treehouse.FitnessFrog.Controllers
         [HttpPost]
         public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes)
         {
-            //Je kan op onderstaande manier form data ophalen of via parameters in de function signature als hierboven
-            //string date = Request.Form["Date"];
-            //string activityId = Request.Form["ActivityId"];
-            //string duration = Request.Form["Duration"];
-            //string intensity = Request.Form["Intensity"];
-            //string exclude = Request.Form["Exclude"];
-            //string notes = Request.Form["Notes"];
-
-            ViewBag.Date = date;
-            ViewBag.ActivityId = activityId;
-            ViewBag.Duration = duration;
-            ViewBag.Intensity = intensity;
-            ViewBag.Exclude = exclude;
-            ViewBag.Notes = notes;
-
-
+            //Het is niet nodig om de parameters door te geven aan de view aangezien we de form via de htmlHelper method hebben gegenereerd
             return View();
         }
 
