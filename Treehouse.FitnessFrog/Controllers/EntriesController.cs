@@ -41,16 +41,23 @@ namespace Treehouse.FitnessFrog.Controllers
 
         public ActionResult Add()
         {
-           
-            return View();
+            var entry = new Entry()
+            {
+                Date = DateTime.Today
+            };
+            return View(entry);
         }
 
         //Use this action method when "Posting from a form" the 2 decorator attributes specify the origin and the form method which is to be associated with
         [HttpPost]
-        public ActionResult Add(DateTime? date, int? activityId, double? duration, Entry.IntensityLevel? intensity, bool? exclude, string notes)
+        public ActionResult Add(Entry entry)
         {
-            //Het is niet nodig om de parameters door te geven aan de view aangezien we de form via de htmlHelper method hebben gegenereerd
-            return View();
+            if (ModelState.IsValid)
+            {
+                _entriesRepository.AddEntry(entry);
+            }
+            
+            return View(entry);
         }
 
         public ActionResult Edit(int? id)
