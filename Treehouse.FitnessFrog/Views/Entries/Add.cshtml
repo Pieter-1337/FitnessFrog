@@ -26,7 +26,7 @@
             <div class="form-group">
 
                 @Html.LabelFor(m => m.ActivityId, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.ActivityId, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.ActivityId, (SelectList)ViewBag.ActivitiesSelectListItems , new { @class = "form-control" })
 
                 @*<label for="ActivityId" class="control-label">Activity</label>
                     <input type="text" id="ActivityId" name="ActivityId" class="form-control" value="@ViewBag.ActivityId"/>*@
