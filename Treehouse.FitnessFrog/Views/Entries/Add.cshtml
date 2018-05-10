@@ -63,9 +63,12 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Exclude, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Exclude, new { @class = "form-control" })
-
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m => m.Exclude) @Html.DisplayNameFor(m => m.Exclude)
+                    </label>
+                </div>
+                
                 @*<label for="Exclude" class="control-label">Exclude</label>
                     <input type="text" id="Exclude" name="Exclude" class="form-control" value="@ViewBag.Exclude"/>*@
             </div>
