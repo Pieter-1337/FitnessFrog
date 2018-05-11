@@ -7,6 +7,10 @@
 
 <h2>@ViewBag.Title</h2>
 
+
+@* Settig a validation op true zorgt ervoor dat enkel de global error messages getoond worden staat het op false worden zowel de global als de fieldmessages getoond *@
+@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger"})
+
 @using (Html.BeginForm())
 {
     <div class="row">
@@ -37,6 +41,8 @@
 
                 @Html.LabelFor(m => m.Duration, new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.Duration, new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(m => m.Duration)
 
                 @*<label for="Duration" class="control-label">Duration</label>
                     <input type="text" id="Duration" name="Duration" class="form-control" value="@ViewBag.Duration"/>*@
