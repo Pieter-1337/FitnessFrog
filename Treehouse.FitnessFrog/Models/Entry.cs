@@ -89,6 +89,8 @@ namespace Treehouse.FitnessFrog.Models
         /// <summary>
         /// The notes for the entry.
         /// </summary>
+        //[Required]
+        [MaxLength(200, ErrorMessage = "The notes field can not be longer than 200 characters")]
         public string Notes { get; set; }
     }
 }
