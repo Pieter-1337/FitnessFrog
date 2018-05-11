@@ -8,11 +8,14 @@
 <h2>@ViewBag.Title</h2>
 
 
-@* Settig a validation op true zorgt ervoor dat enkel de global error messages getoond worden staat het op false worden zowel de global als de fieldmessages getoond *@
-@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger"})
 
 @using (Html.BeginForm())
 {
+
+    @* Settig a validation op true zorgt ervoor dat enkel de global error messages getoond worden staat het op false worden zowel de global als de fieldmessages getoond *@
+    @*ZET DE VALIDATIONSUMMARY ALTIJD BINNEN DE FORMS TAGS OF DE USING STATEMENT OM CLIENT SIDE VALIDATION TE LATEN WERKEN*@
+    @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+
     <div class="row">
 
         <div class="col-md-6">
@@ -21,7 +24,7 @@
 
                 @*2 manieren om een form te generen een via Html helper manier en een via traditionele Html manier*@
 
-                @Html.LabelFor(m => m.Date ,new { @class = "control-label" })
+                @Html.LabelFor(m => m.Date, new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.Date, "{0:d}", new { @class = "form-control datepicker" })
 
                 @*<label for="Date" class="control-label">Date</label>
@@ -31,7 +34,7 @@
             <div class="form-group">
 
                 @Html.LabelFor(m => m.ActivityId, new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.ActivityId, (SelectList)ViewBag.ActivitiesSelectListItems , new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.ActivityId, (SelectList)ViewBag.ActivitiesSelectListItems, new { @class = "form-control" })
 
                 @*<label for="ActivityId" class="control-label">Activity</label>
                     <input type="text" id="ActivityId" name="ActivityId" class="form-control" value="@ViewBag.ActivityId"/>*@
@@ -61,7 +64,7 @@
 
                     <label class="radio-inline">
                         @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.High) @Entry.IntensityLevel.High
-                    </label> 
+                    </label>
                 </div>
 
                 @*<label for="Intensity" class="control-label">Intensity</label>
@@ -74,7 +77,7 @@
                         @Html.CheckBoxFor(m => m.Exclude) @Html.DisplayNameFor(m => m.Exclude)
                     </label>
                 </div>
-                
+
                 @*<label for="Exclude" class="control-label">Exclude</label>
                     <input type="text" id="Exclude" name="Exclude" class="form-control" value="@ViewBag.Exclude"/>*@
             </div>

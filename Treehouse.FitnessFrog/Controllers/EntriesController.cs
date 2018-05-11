@@ -39,6 +39,7 @@ namespace Treehouse.FitnessFrog.Controllers
             return View(entries);
         }
 
+        
         public ActionResult Add()
         {
             var entry = new Entry()
