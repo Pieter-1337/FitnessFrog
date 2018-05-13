@@ -101,6 +101,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.date.validate.js" />
     <Content Include="Scripts\Jquery.validate.bootstrap.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -138,6 +139,7 @@
     <Content Include="Views\Entries\Edit.cshtml" />
     <Content Include="Views\Entries\Delete.cshtml" />
     <Content Include="Views\Shared\_Logo.cshtml" />
+    <Content Include="Views\Entries\_EntryForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

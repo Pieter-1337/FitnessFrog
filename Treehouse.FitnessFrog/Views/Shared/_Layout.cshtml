@@ -65,12 +65,13 @@
     @* Underlying 2 scripts were both obtained with nuget package manager as Jquery validation and Microsoft unobtruvsive jquery validion
         They are used for client side validation*@
     <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.date.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/Jquery.validate.bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <script>
-        $('input.datepicker').datepicker({ format: 'm/d/yyyy' });
+        $('input.datepicker').datepicker({ format: 'd/m/yyyy' });
     </script>
 </body>
 </html>
