@@ -64,11 +64,18 @@ namespace Treehouse.FitnessFrog.Data
         /// <param name="entry">The entry to add.</param>
         public void AddEntry(Entry entry)
         {
-            // Get the next available entry ID.
-            int nextAvailableEntryId = Data.Entries
-                .Max(e => e.Id) + 1;
+            if (Data.Entries.Count() > 0)
+            {
+                // Get the next available entry ID.
+                int nextAvailableEntryId = Data.Entries
+                    .Max(e => e.Id) + 1;
 
-            entry.Id = nextAvailableEntryId;
+                entry.Id = nextAvailableEntryId;
+            }
+            else
+            {
+                entry.Id = 1;
+            }
 
             Data.Entries.Add(entry);
         }
